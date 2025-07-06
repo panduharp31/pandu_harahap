@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Interaktif DOM</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 10px 15px; margin-top: 10px; }
+    #output { margin-top: 20px; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <h1>Website Interaktif dengan DOM dan Event Listener</h1>
+  <label for="nama">Masukkan Nama Anda:</label>
+  <input type="text" id="nama" placeholder="Nama Anda">
+  <button id="tombol">Sapa Saya</button>
+
+  <div id="output"></div>
+
+  <script>
+    const tombol = document.getElementById("tombol");
+    const namaInput = document.getElementById("nama");
+    const output = document.getElementById("output");
+
+    tombol.addEventListener("click", () => {
+      const nama = namaInput.value.trim();
+      if (nama) {
+        output.textContent = `Halo, ${nama}! Selamat datang di website interaktif.`;
+      } else {
+        output.textContent = "Silakan masukkan nama terlebih dahulu.";
+      }
+    });
+  </script>
+</body>
+</html>
